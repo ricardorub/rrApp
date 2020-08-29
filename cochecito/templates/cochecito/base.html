@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automotora</title>
+<!-- se pone staticos para cargar css y js del proyecto en html href src menos con https -->
+<!-- para poner recursos estaticos se tiene que poner en cada pagina load static -->
+<!-- para encontrar la ruta de la sintaxis de django a todos los que vengan del proyecto -->
+<!-- #{  %# ssstatic   'cochecito/ ...  '    #%  }# -->
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cochecito/css/estilos.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <script src="{% static 'cochecito/js/inicializacion.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="js/inicializacion.js"></script>
+
+    
+
+</head>
+<body>
+    <header>
+        <img class="logo" src="{% static 'cochecito/img/automovillogo.jpg' %}" alt="logo de la pagina">
+        <ul class="navegacion">
+            <li>
+                <!--para abrir enlace en otra pestaña target="_blank"-->
+                <a href="{% url 'home' %}" >Home</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+            <li>
+                <a href="#">Historia</a>
+            </li>
+            <li>
+                <a href="{% url 'galeria' %}">Galeria</a>
+            </li>
+            <li>
+                <a href="{% url 'formulario' %}">formulario</a>
+            </li>
+        </ul>
+    </header>
+    <div class="landing">
+        <div class="slider">
+            <div>
+                <img title="Imagen de un auto gris" class="imagen_landing" src="{% static 'cochecito/img/automovil.png' %}" alt="imagen de un automovil">
+            </div>
+            <div>
+                <img title="Imagen de un auto rojo" class="imagen_landing" src="{% static 'cochecito/img/auto2.png' %}" alt="imagen de un automovil">
+            </div>
+            <div>
+                <img class="imagen_landing" title="Imagen de un auto blanco" src="{% static 'cochecito/img/auto3.png' %}" alt="imagen de un automovil">
+            </div>
+        </div>
+        <h2 class="eslogan">La concesionaria mas grande del Peru</h2>
+
+        <ul class="redes_sociales">
+            <li><img src="{% static 'cochecito/img/social-twitter.png' %}" alt="twitter"></li>
+            <li><img src="{% static 'cochecito/img/socialfacebook.png' %}" alt="facebook"></li>
+            <li><img src="{% static 'cochecito/img/social-inst.png' %}" alt="instagram"></li>
+        </ul>
+    </div>
+
+    <div class="contenido">
+
+        {% block contenido %}
+
+        {% endblock contenido %}
+
+    </div>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <h3 class="color_blanco centrar_texto">Lima - Peru</h3>
+        <hr>
+        <h3 class="color_blanco centrar_texto">2020</h3>
+    </footer>
+</body>
+</html>

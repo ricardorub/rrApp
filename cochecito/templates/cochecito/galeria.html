@@ -1,0 +1,13 @@
+{% extends "cochecito/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="galeria">
+    <a data-fancybox="gallery" href="{% static 'cochecito/img/automovil.png' %}"><img src="{% static 'cochecito/img/automovil.png' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'cochecito/img/auto2.png' %}"><img src="{% static 'cochecito/img/auto2.png' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'cochecito/img/auto3.png' %}"><img src="{% static 'cochecito/img/auto3.png' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'cochecito/img/deportivo.png' %}"><img src="{% static 'cochecito/img/deportivo.png' %}"></a>
+</div>
+{% endblock contenido %}
+    
